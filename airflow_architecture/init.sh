@@ -12,10 +12,10 @@ sleep 30
 
 # 3) Limpa o PID do worker antes de reiniciar
 echo "Limpando PID do Worker..."
-docker exec airflow-worker-1 rm -f /opt/airflow/airflow-worker.pid || true
+docker exec docker-airflow-worker-1 rm -f /opt/airflow/airflow-worker.pid || true
 
 # 4) Reinicia o worker direito
-docker compose -f /var/server_architecture/airflow_architecture/docker/docker-compose.yaml restart airflow-worker-1
+docker compose -f /var/server_architecture/airflow_architecture/docker/docker-compose.yaml restart airflow-worker
 sleep 10
 
 # --- SERVIÇO DO NGINX ---
